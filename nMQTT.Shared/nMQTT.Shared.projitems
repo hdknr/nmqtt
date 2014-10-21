@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{531DE43A-50A4-4C33-8894-495830AF3A0D}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>nMQTT.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)ClientIdentifierException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ConnectionException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Constants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataAvailableEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GlobalSuppressions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IPublishingManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)InvalidHeaderException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)InvalidMessageEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)InvalidMessageException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)InvalidPayloadSizeException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)InvalidTopicException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MessageIdentifierDispenser.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MqttClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MqttMessageEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MqttQos.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MqttReceivedMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PublicationTopic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PublishEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PublishingManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Subscription.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SubscriptionStatus.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SubscriptionTopic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SubscriptionsManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Topic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ConnectionHandling\ConnectionDroppedEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ConnectionHandling\ConnectionState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ConnectionHandling\IMqttConnectionHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ConnectionHandling\MqttConnection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ConnectionHandling\MqttConnectionHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ConnectionHandling\MqttConnectionKeepAlive.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ConnectionHandling\SynchronousMqttConnectionHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataConverters\AsciiPayloadConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataConverters\IPayloadConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataConverters\PassThroughPayloadConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Diagnostics\MessageLogger.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Encoding\MqttEncoding.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ExtensionMethods\CollectionExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ExtensionMethods\StreamExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\MqttConnectFlags.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\MqttConnectReturnCode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\MqttHeader.Fluent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\MqttHeader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\MqttMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\MqttMessageFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\MqttMessageType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\MqttPayload.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\MqttVariableHeader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\Connect\MqttConnectMessage.Fluent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\Connect\MqttConnectMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\Connect\MqttConnectPayload.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\Connect\MqttConnectVariableHeader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\ConnectAck\MqttConnectAckMessage.Fluent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\ConnectAck\MqttConnectAckMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\ConnectAck\MqttConnectAckVariableHeader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\Disconnect\MqttDisconnectMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\PingRequest\MqttPingRequestMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\PingResponse\MqttPingResponseMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\Publish\MqttPubishVariableHeader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\Publish\MqttPublishMessage.Fluent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\Publish\MqttPublishMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\Publish\MqttPublishPayload.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\PublishAck\MqttPubishAckVariableHeader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\PublishAck\MqttPublishAckMessage.Fluent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\PublishAck\MqttPublishAckMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\PublishComplete\MqttPublishCompleteMessage.Fluent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\PublishComplete\MqttPublishCompleteMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\PublishComplete\MqttPublishCompleteVariableHeader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\PublishReceived\MqttPublishReceivedMessage.Fluent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\PublishReceived\MqttPublishReceivedMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\PublishReceived\MqttPublishReceivedVariableHeader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\PublishRelease\MqttPublishReleaseMessage.Fluent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\PublishRelease\MqttPublishReleaseMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\PublishRelease\MqttPublishReleaseVariableHeader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\Subscribe\MqttSubscribeMessage.Fluent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\Subscribe\MqttSubscribeMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\Subscribe\MqttSubscribePayload.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\Subscribe\MqttSubscribeVariableHeader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\SubscribeAck\MqttSubscribeAckMessage.Fluent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\SubscribeAck\MqttSubscribeAckMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\SubscribeAck\MqttSubscribeAckPayload.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\SubscribeAck\MqttSubscribeAckVariableHeader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\UnSubscribe\MqttUnsubscribeMessage.Fluent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\UnSubscribe\MqttUnsubscribeMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\UnSubscribe\MqttUnsubscribePayload.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\UnSubscribe\MqttUnsubscribeVariableHeader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\UnSubscribeAck\MqttUnSubscribeAckMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\UnSubscribeAck\MqttUnSubscribeAckVariableHeader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\UnSubscribeAck\MqttUnsubscribeAckMessage.Fluent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Properties\AssemblyInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Properties\Settings.Designer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)CodeAnalysisDictionary.xml" />
+    <None Include="$(MSBuildThisFileDirectory)Properties\Settings.settings" />
+  </ItemGroup>
+</Project>

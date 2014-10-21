@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{42C0BBD9-55CE-4FC1-8D90-A7348ABAFB23};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{176D575A-3279-4C02-A419-C77B5EF3EE39}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>MqttApp.Mac</RootNamespace>
+    <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
+    <AssemblyName>MqttApp.Mac</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <UseSGen>false</UseSGen>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <CodeSigningKey>Mac Developer</CodeSigningKey>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <CreatePackage>false</CreatePackage>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <LinkMode>SdkOnly</LinkMode>
+    <UseSGen>false</UseSGen>
+    <IncludeMonoRuntime>true</IncludeMonoRuntime>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <CodeSigningKey>Developer ID Application</CodeSigningKey>
+    <EnableCodeSigning>true</EnableCodeSigning>
+    <CreatePackage>true</CreatePackage>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\AppStore</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <LinkMode>SdkOnly</LinkMode>
+    <UseSGen>false</UseSGen>
+    <IncludeMonoRuntime>true</IncludeMonoRuntime>
+    <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
+    <CreatePackage>true</CreatePackage>
+    <CodeSigningKey>3rd Party Mac Developer Application</CodeSigningKey>
+    <EnableCodeSigning>true</EnableCodeSigning>
+    <EnablePackageSigning>true</EnablePackageSigning>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="XamMac" />
+    <Reference Include="System.Reactive.Interfaces">
+      <HintPath>..\packages\Rx-Interfaces.2.2.5\lib\net45\System.Reactive.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Core">
+      <HintPath>..\packages\Rx-Core.2.2.5\lib\net45\System.Reactive.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Linq">
+      <HintPath>..\packages\Rx-Linq.2.2.5\lib\net45\System.Reactive.Linq.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Messagings\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainWindow.cs" />
+    <Compile Include="MainWindowController.cs" />
+    <Compile Include="MainWindow.designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="AppDelegate.designer.cs">
+      <DependentUpon>AppDelegate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Messagings\MqttHandler.cs" />
+    <Compile Include="Messagings\Options.cs" />
+    <Compile Include="Messagings\TopicSubscribedEventArgs.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="MainWindow.xib" />
+    <InterfaceDefinition Include="MainMenu.xib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\nMQTT.Mac\nMQTT.Mac.csproj">
+      <Project>{67040CFF-E013-4614-9B46-469D2ACDB629}</Project>
+      <Name>nMQTT.Mac</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
