@@ -55,8 +55,10 @@ namespace Nmqtt
         ///     Initializes a new instance of the <see cref="MqttVariableHeader" /> class.
         /// </summary>
         public MqttVariableHeader() {
-            this.ProtocolName = "MQIsdp";
-            this.ProtocolVersion = 3;
+//			this.ProtocolName = "MQIsdp";	//HDKNR
+//            this.ProtocolVersion = 3;
+			this.ProtocolName = "MQTT";
+			this.ProtocolVersion = 4;
             this.ConnectFlags = new MqttConnectFlags();
         }
 

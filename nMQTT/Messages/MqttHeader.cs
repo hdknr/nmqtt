@@ -124,6 +124,10 @@ namespace Nmqtt
             }
         }
 
+		static byte[] ControlPacketFlag = new byte[16]{
+			0,0,0,0,0,0,2,0,2,0,2,0,0,0,0,0
+		};
+			
         /// <summary>
         ///     Gets the value of the Mqtt header as a byte array
         /// </summary>
@@ -135,7 +139,9 @@ namespace Nmqtt
                 // qos and retain, and the follow bytes (up to 4 of them) are the size of the payload + variable header.
                 headerBytes.Add(
                     (byte)
-                    ((((int) MessageType) << 4) + ((Duplicate ? 1 : 0) << 3) + (((int) Qos) << 1) + (Retain ? 1 : 0)));
+					((((int) MessageType) << 4) 
+						+ ControlPacketFlag [(int)MessageType]			// ADD by HDKNR
+						+ ((Duplicate ? 1 : 0) << 3) + (((int) Qos) << 1) + (Retain ? 1 : 0)));
                 headerBytes.AddRange(GetRemainingLengthBytes());
                 return headerBytes;
             }
