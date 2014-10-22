@@ -29,7 +29,7 @@ namespace MqttApp.Mac
 		{
 			Initialize ();
 		}
-		
+			
 		// Shared initialization code
 		void Initialize ()
 		{
@@ -44,10 +44,9 @@ namespace MqttApp.Mac
 			}
 		}
 
-		public override void WindowDidLoad ()
-		{
-			base.WindowDidLoad ();
 
+		public void RunSubscribe()
+		{
 			Messagings.Options.Username = null;
 			Messagings.Options.Password = null;
 			Messagings.Options.ClientIdentifier = "any";
@@ -72,7 +71,7 @@ namespace MqttApp.Mac
 
 			if (state == Nmqtt.ConnectionState.Connected) {
 				Messagings.MqttHandler.Instance.Subscribe ("my/topic/string", 0);
-			}
+			}				
 		}
 
 	}
