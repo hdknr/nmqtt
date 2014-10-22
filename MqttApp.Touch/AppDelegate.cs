@@ -5,13 +5,18 @@ using System.Linq;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 
+using Cirrious.CrossCore;
+using Cirrious.MvvmCross.Touch.Platform;
+using Cirrious.MvvmCross.ViewModels;
+
 namespace MqttApp.Touch
 {
 	// The UIApplicationDelegate for the application. This class is responsible for launching the
 	// User Interface of the application, as well as listening (and optionally responding) to
 	// application events from iOS.
 	[Register ("AppDelegate")]
-	public partial class AppDelegate : UIApplicationDelegate
+	public partial class AppDelegate : MvxApplicationDelegate
+		//UIApplicationDelegate
 	{
 		// class-level declarations
 		
@@ -41,6 +46,13 @@ namespace MqttApp.Touch
 		// This method is called when the application is about to terminate. Save data, if needed.
 		public override void WillTerminate (UIApplication application)
 		{
+		}
+
+		public override bool FinishedLaunching (
+			UIApplication application, NSDictionary launchOptions)
+		{
+			Setup.Configure (this, this.Window);
+			return true;
 		}
 	}
 }
