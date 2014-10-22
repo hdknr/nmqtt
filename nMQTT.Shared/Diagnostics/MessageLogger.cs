@@ -32,14 +32,15 @@ namespace Nmqtt.Diagnostics
         /// </summary>
         /// <param name="connectionHandler">The connection handler.</param>
         public MessageLogger(MqttConnectionHandler connectionHandler) {
-//            if (Settings.Default.EnableMessageLogging) {
-//                this.connectionHandler = connectionHandler;
-//                // subscribe to ALL events received.
-//                foreach (MqttMessageType msgType in Enum.GetValues(typeof (MqttMessageType))) {
-//                    connectionHandler.RegisterForMessage(msgType, MessageLoggerCallback);
-//                }
-//                connectionHandler.RegisterForAllSentMessages(MessageSentCallback);
-//            }
+
+			if( App.Settings.EnableMessageLogging ){	// Settings...
+                this.connectionHandler = connectionHandler;
+                // subscribe to ALL events received.
+                foreach (MqttMessageType msgType in Enum.GetValues(typeof (MqttMessageType))) {
+                    connectionHandler.RegisterForMessage(msgType, MessageLoggerCallback);
+                }
+                connectionHandler.RegisterForAllSentMessages(MessageSentCallback);
+            }
         }
 
         /// <summary>
