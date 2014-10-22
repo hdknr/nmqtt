@@ -16,7 +16,11 @@ namespace Nmqtt
 
 		public static Shared.ISettings Settings {
 			get{
-				return Mvx.Resolve<Shared.ISettings> ();
+				try{
+					return Mvx.Resolve<Shared.ISettings> ();
+				}catch{
+					return null;
+				}
 			}
 		}
     }

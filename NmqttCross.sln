@@ -98,6 +98,6 @@ Global
 		{D5FABFDC-2473-4314-A497-5101B7CC44A6}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = MqttApp.Touch\MqttApp.Touch.csproj
+		StartupItem = MqttApp.Mac\MqttApp.Mac.csproj
 	EndGlobalSection
 EndGlobal

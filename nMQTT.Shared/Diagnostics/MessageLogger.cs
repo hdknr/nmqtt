@@ -33,7 +33,8 @@ namespace Nmqtt.Diagnostics
         /// <param name="connectionHandler">The connection handler.</param>
         public MessageLogger(MqttConnectionHandler connectionHandler) {
 
-			if( App.Settings.EnableMessageLogging ){	// Settings...
+			if( App.Settings != null && 
+				App.Settings.EnableMessageLogging ){	// Settings...
                 this.connectionHandler = connectionHandler;
                 // subscribe to ALL events received.
                 foreach (MqttMessageType msgType in Enum.GetValues(typeof (MqttMessageType))) {
